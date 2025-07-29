@@ -10,24 +10,24 @@ import "swiper/css/pagination";
 const testimonialData = [
   {
     image: "/t-avt-1.png",
-    name: "Anne Smith",
-    position: "Customer",
+    name: "T.K.",
+    position: "Webディレクター",
     message:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum expedita odit beatae, cupiditate saepe quam officia aut placeat quas neque!",
+      "複数ページ構成のコーポレートサイトを、短期間でご対応いただきました。柔軟なご提案も多く、安心して進行できました。",
   },
   {
     image: "/t-avt-2.png",
-    name: "Jane Doe",
-    position: "Customer",
+    name: "田中 あやか",
+    position: "ライフコーチ",
     message:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum expedita odit beatae, cupiditate saepe quam officia aut placeat quas neque!",
+      "コミュニケーションがとても丁寧で、初心者の私にもわかりやすく説明してくれました。希望通りのデザインを実現していただき大満足です！",
   },
   {
     image: "/t-avt-3.png",
-    name: "Jhon Doe",
-    position: "Customer",
+    name: "K.N.",
+    position: "個人起業家",
     message:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum expedita odit beatae, cupiditate saepe quam officia aut placeat quas neque!",
+      "納期が短い案件だったのですが、迅速かつ高品質な対応をしていただけて助かりました。今後もお願いしたいです。",
   },
 ];
 

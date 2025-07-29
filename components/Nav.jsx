@@ -13,17 +13,17 @@ import {
 
 // nav data
 export const navData = [
-  { name: "home", path: "/", Icon: HiHome },
-  { name: "about", path: "/about", Icon: HiUser },
-  { name: "services", path: "/services", Icon: HiRectangleGroup },
-  { name: "work", path: "/work", Icon: HiViewColumns },
+  { name: "ホーム", path: "/", Icon: HiHome },
+  { name: "情報", path: "/about", Icon: HiUser },
+  { name: "事業内容", path: "/services", Icon: HiRectangleGroup },
+  { name: "実績", path: "/work", Icon: HiViewColumns },
   {
-    name: "testimonials",
+    name: "評価",
     path: "/testimonials",
     Icon: HiChatBubbleBottomCenterText,
   },
   {
-    name: "contact",
+    name: "連絡先",
     path: "/contact",
     Icon: HiEnvelope,
   },

@@ -20,7 +20,7 @@ const Work = () => {
               exit="hidden"
               className="h2 xl:mt-12"
             >
-              My work <span className="text-accent">.</span>
+              制作実績 <span className="text-accent">.</span>
             </motion.h2>
             <motion.p
               variants={fadeIn("up", 0.4)}
@@ -29,8 +29,8 @@ const Work = () => {
               exit="hidden"
               className="mb-4 max-w-[400px] mx-auto lg:mx-0"
             >
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur
-              tempora eligendi, quisquam tempore sint reiciendis.
+               Web制作からアプリ開発まで、さまざまなニーズに応じたプロジェクトを手がけています。
+               デザイン性と機能性を両立させた、実用的で美しいプロダクトをご紹介します。
             </motion.p>
           </div>
 

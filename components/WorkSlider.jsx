@@ -14,23 +14,23 @@ const workSlides = {
       images: [
         {
           title: "title",
-          path: "/thumb1.jpg",
-          link: "http://example.com",
+          path: "/1.jpg",
+          link: "https://savitaglobal.com/",
         },
         {
           title: "title",
-          path: "/thumb2.jpg",
-          link: "http://example.com",
+          path: "/2.jpg",
+          link: "https://sazen.jp/",
         },
         {
           title: "title",
-          path: "/thumb3.jpg",
-          link: "http://example.com",
+          path: "/3.jpg",
+          link: "https://artmake-glow-clinic.com/",
         },
         {
           title: "title",
-          path: "/thumb4.jpg",
-          link: "http://example.com",
+          path: "/4.jpg",
+          link: "https://www.matchcatch.com/",
         },
       ],
     },
@@ -38,23 +38,23 @@ const workSlides = {
       images: [
         {
           title: "title",
-          path: "/thumb4.jpg",
-          link: "http://example.com",
+          path: "/5.jpg",
+          link: "https://jukencoaching.org/",
         },
         {
           title: "title",
-          path: "/thumb1.jpg",
-          link: "http://example.com",
+          path: "/6.jpg",
+          link: "https://okadamanila.com/",
         },
         {
           title: "title",
-          path: "/thumb2.jpg",
-          link: "http://example.com",
+          path: "/7.jpg",
+          link: "https://aclinic-beauty.com/oneday_kogao/g/",
         },
         {
           title: "title",
-          path: "/thumb3.jpg",
-          link: "http://example.com",
+          path: "/8.jpg",
+          link: "https://aesthacosmetics.com/",
         },
       ],
     },

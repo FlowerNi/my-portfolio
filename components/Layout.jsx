@@ -4,6 +4,7 @@ import Head from "next/head";
 import Header from "../components/Header";
 import Nav from "../components/Nav";
 import TopLeftImg from "../components/TopLeftImg";
+import FloatingLogo from "./FloatingLogo";
 
 // setup font
 const sora = Sora({
@@ -19,22 +20,23 @@ const Layout = ({ children }) => {
     >
       {/* metadata */}
       <Head>
-        <title>Ethan Smith | Portfolio</title>
+        <title>Warm Fire | Portfolio</title>
         <meta
           name="description"
-          content="Ethan Smith is a Full-stack web developer with 10+ years of experience."
+          content="Warm Fire is a Full-stack web developer with 6 years of experience."
         />
         <meta
           name="keywords"
           content="react, next, nextjs, html, css, javascript, js, modern-ui, modern-ux, portfolio, framer-motion, 3d-website, particle-effect"
         />
-        <meta name="author" content="Sanidhya Kumar Verma" />
+        <meta name="author" content="Warm Fire" />
         <meta name="theme-color" content="#f13024" />
       </Head>
 
       <TopLeftImg />
       <Nav />
       <Header />
+      <FloatingLogo />
 
       {/* main content */}
       {children}

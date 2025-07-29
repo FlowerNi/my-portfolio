@@ -14,7 +14,7 @@ const Testimonials = () => {
           exit="hidden"
           className="h2 mb-8 xl:mb-0"
         >
-          What clients <span className="text-accent">say.</span>
+          クライアントの <span className="text-accent">声.</span>
         </motion.h2>
 
         {/* slider */}

@@ -16,28 +16,28 @@ import "swiper/css/pagination";
 const serviceData = [
   {
     Icon: RxCrop,
-    title: "Branding",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    title: "Web開発",
+    description: "WordPress + Elementor を使用し、完全レスポンシブなビジネス向けサイトを構築します。UI/UXにも配慮し、閲覧者にとってストレスのない構成を実現します。",
   },
   {
     Icon: RxPencil2,
-    title: "Design",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    title: "ブランディング",
+    description: "FigmaやAdobe XDベースのモダンなUI設計や、要望に応じた配色・レイアウト設計を行います。美しく直感的なデザインで、ユーザー体験を向上させます。"
   },
   {
     Icon: RxDesktop,
-    title: "Development",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    title: "モバイルアプリ開発",
+    description: "React Native を用いた iOS / Android 両対応のアプリを開発します。UIデザインからストア公開まで一括対応可能。軽量・高速なネイティブ体験を実現します。",
   },
   {
     Icon: RxReader,
-    title: "Copywriting",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    title: "コピーライティング",
+    description: "ヒアリング内容に基づき、ターゲットに響く魅力的な文章を作成します。キャッチコピーやサービス説明文など幅広く対応可能です。",
   },
   {
     Icon: RxRocket,
-    title: "SEO",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    title: "検索対策",
+    description: "構造・見出し・キーワード配置など、Googleに評価されやすいサイト設計を行います。初歩的なSEO対策込みのサイト構築が可能です。",
   },
 ];
 
@@ -63,7 +63,7 @@ const ServiceSlider = () => {
     >
       {serviceData.map((item, i) => (
         <SwiperSlide key={i}>
-          <div className="bg-[rgba(65,47,123,0.15)] h-max rounded-lg px-6 py-8 flex sm:flex-col gap-x-6 sm:gap-x-0 group cursor-pointer hover:bg-[rgba(89,65,169,0.15)] transition-all duration-300">
+          <div className="h-full flex flex-col  bg-[rgba(65,47,123,0.15)] rounded-lg px-6 py-8 group cursor-pointer hover:bg-[rgba(89,65,169,0.15)] transition-all duration-300">
             {/* icon */}
             <div className="text-4xl text-accent mb-4">
               <item.Icon aria-hidden />
@@ -76,12 +76,12 @@ const ServiceSlider = () => {
             </div>
 
             {/* arrow */}
-            <div className="text-3xl">
+            {/* <div className="text-3xl">
               <RxArrowTopRight
                 className="group-hover:rotate-45 group-hover:text-accent transition-all duration-300"
                 aria-hidden
               />
-            </div>
+            </div> */}
           </div>
         </SwiperSlide>
       ))}

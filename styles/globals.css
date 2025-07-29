@@ -18,6 +18,16 @@
   color: #f13024;
 }
 
+.scrollable-text {
+  overflow-y: scroll;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE 10+ */
+  max-height: 400px;
+}
+.scrollable-text::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
+}
+
 @layer base {
   body {
     @apply bg-secondary overflow-hidden leading-relaxed;

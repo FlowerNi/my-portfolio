@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import CountUp from "react-countup";
 import {
   FaCss3,
@@ -23,10 +23,10 @@ import { fadeIn } from "../../variants";
 //  data
 export const aboutData = [
   {
-    title: "skills",
+    title: "スキル",
     info: [
       {
-        title: "Web Development",
+        title: "ウェブ開発",
         icons: [
           FaHtml5,
           FaCss3,
@@ -38,62 +38,64 @@ export const aboutData = [
         ],
       },
       {
-        title: "UI/UX Design",
+        title: "UI/UX デザイン",
         icons: [FaFigma, SiAdobexd, SiAdobephotoshop],
       },
     ],
   },
   {
-    title: "awards",
+    title: "学歴",
     info: [
       {
-        title: "Webby Awards - Honoree",
-        stage: "2011 - 2012",
-      },
+        title: "フィリピン・University of the East",
+        stage: "2018 ~ 2022",
+      }
+    ],
+  },
+  {
+    title: "しょう",
+    info: [
       {
-        title: "Adobe Design Achievement Awards - Finalist",
-        stage: "2009 - 2010",
+        title: "卒業制作で「Best Capstone Project」賞を受賞",
+        stage: "2022",
       },
     ],
   },
   {
-    title: "experience",
+    title: "けいけん",
     info: [
       {
-        title: "UX/UI Designer - XYZ Company",
-        stage: "2012 - 2023",
-      },
-      {
-        title: "Web Developer - ABC Agency",
-        stage: "2010 - 2012",
-      },
-      {
-        title: "Intern - DEF Corporation",
-        stage: "2008 - 2010",
-      },
+        title: "PixelLabs Web Solutions",
+        stage: "2023.4 - 2024.6",
+      }
     ],
   },
-  {
-    title: "credentials",
-    info: [
-      {
-        title: "Web Development - ABC University, LA, CA",
-        stage: "2011",
-      },
-      {
-        title: "Computer Science Diploma - AV Technical Institute",
-        stage: "2009",
-      },
-      {
-        title: "Certified Graphic Designer - ABC Institute, Los Angeles, CA",
-        stage: "2006",
-      },
-    ],
-  },
+  
 ];
 
 const About = () => {
   const [index, setIndex] = useState(0);
+  const [showTopFade, setShowTopFade] = useState(false);
+  const [showBottomFade, setShowBottomFade] = useState(true);
+  const scrollRef = useRef(null);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const el = scrollRef.current;
+      if (!el) return;
+      setShowTopFade(el.scrollTop > 2);
+      setShowBottomFade(el.scrollTop + el.clientHeight < el.scrollHeight - 2);
+    };
+    const el = scrollRef.current;
+    if (el) {
+      el.addEventListener('scroll', handleScroll);
+      // Initial check
+      handleScroll();
+    }
+    return () => {
+      if (el) el.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
 
   return (
     <div className="h-full bg-primary/30 py-32 text-center xl:text-left">
@@ -105,7 +107,7 @@ const About = () => {
         initial="hidden"
         animate="show"
         exit="hidden"
-        className="hidden xl:flex absolute bottom-0 -left-[370px]"
+        className="hidden xl:flex absolute top-0 -left-[337px]"
       >
         <Avatar />
       </motion.div>
@@ -120,19 +122,58 @@ const About = () => {
             exit="hidden"
             className="h2"
           >
-            Captivating <span className="text-accent">stories</span> birth
-            magnificent designs.
+            <span className="text-accent">灯火</span>の正体
           </motion.h2>
-          <motion.p
-            variants={fadeIn("right", 0.4)}
-            initial="hidden"
-            animate="show"
-            className="max-w-[500px] mx-auto xl:mx-0 mb-6 xl:mb-12 px-2 xl:px-0"
+          {/* Elegant scrollable text container for user scroll */}
+          <div
+            className="relative max-w-[500px] mx-auto xl:mx-0 mb-6 xl:mb-12 px-2 xl:px-0 group overflow-hidden h-[220px]"
+            style={{ WebkitMaskImage: 'linear-gradient(to bottom, transparent 0%, black 10%, black 90%, transparent 100%)', maskImage: 'linear-gradient(to bottom, transparent 0%, black 10%, black 90%, transparent 100%)' }}
           >
-            10 years ago, I begin freelancing as a developer. Since then, I've
-            done remote work for agencies, consulted for startups, and
-            collabrated on digital products for business and consumer use.
-          </motion.p>
+            <motion.p
+              ref={scrollRef}
+              variants={fadeIn("right", 0.4)}
+              initial="hidden"
+              animate="show"
+              className="scrollable-text"
+              style={{ overflowY: 'auto',  pointerEvents: 'auto', maxHeight: '220px' }}
+            >
+              誰かの「困った」を解きほぐしたい。<br />
+              言葉にならない想いを、形にして届けたい。<br />
+              そんな願いが、僕の情熱の根っこにあります。<br />
+              <br />
+              この道を選んだ理由は、単純な好奇心だった。<br />
+              だけど続けてこれた理由は、「誰かのために」という小さな祈り。<br />
+              <br />
+              技術の奥にあるもの <br />
+              コードを書くことは、単なる作業ではなく、<br />
+              誰かの「こうなったらいいな」を叶える行為。<br />
+              <br />
+              画面の向こうにいる、まだ会ったことのない誰かを思いながら、<br />
+              僕は今日も、ひとつひとつ丁寧にコードを紡いでいます。<br />
+              <br />
+              僕を動かすもの<br />
+              共感：クライアントの想いに心から寄り添いたい<br />
+              <br />
+              誠実さ：見えないところこそ、丁寧に<br />
+              <br />
+              遊び心：ほんの少しの余白が、心を動かす<br />
+              <br />
+              それでもなお、進む理由<br />
+              道に迷うこともある。<br />
+              モチベーションが揺らぐ夜もある。<br />
+              でも、不思議と「やめたい」とは思わなかった。<br />
+              <br />
+              それはたぶん、<br />
+              この情熱——灯火の正体が、まだ僕の中で燃え続けているから。<br />
+            </motion.p>
+            {/* Subtle fade for elegance, only show when needed */}
+            {showTopFade && (
+              <div className="pointer-events-none absolute top-0 left-0 w-full h-6 bg-gradient-to-b from-primary/30 to-transparent z-10" />
+            )}
+            {showBottomFade && (
+              <div className="pointer-events-none absolute bottom-0 left-0 w-full h-6 bg-gradient-to-t from-primary/30 to-transparent z-10" />
+            )}
+          </div>
 
           {/* counters */}
           <motion.div
@@ -143,42 +184,46 @@ const About = () => {
           >
             <div className="flex flex-1 xl:gap-x-6">
               {/* experience */}
-              <div className="relative flex-1 after:w-[1px] after:h-full after:bg-white/10 after:absolute after:top-0 after:right-0">
+              <div className="relative text-center flex-1 after:w-[1px] after:h-full after:bg-white/10 after:absolute after:top-0 after:right-0">
                 <div className="text-2xl xl:text-4xl font-extrabold text-accent mb-2">
-                  <CountUp start={0} end={10} duration={5} />
+                  <CountUp start={0} end={6} duration={5} />
                 </div>
-                <div className="text-xs uppercase tracking-[1px] leading-[1.4] max-w-[100px]">
-                  Years of experience.
+                <div className="text-center text-xs uppercase tracking-[1px] leading-[1.4]">
+                  年の経験
                 </div>
               </div>
 
               {/* clients */}
-              <div className="relative flex-1 after:w-[1px] after:h-full after:bg-white/10 after:absolute after:top-0 after:right-0">
+              <div className="relative text-center flex-1 after:w-[1px] after:h-full after:bg-white/10 after:absolute after:top-0 after:right-0">
                 <div className="text-2xl xl:text-4xl font-extrabold text-accent mb-2">
-                  <CountUp start={0} end={250} duration={5} />
+                  <CountUp start={0} end={73} duration={5} />
                 </div>
-                <div className="text-xs uppercase tracking-[1px] leading-[1.4] max-w-[100px]">
-                  Satisfied clients.
+                <div className="text-center text-xs uppercase tracking-[1px] leading-[1.4]">
+                  名の大切な <br />
+                  クライアントとの <br />
+                  出会い
                 </div>
               </div>
 
               {/* projects */}
-              <div className="relative flex-1 after:w-[1px] after:h-full after:bg-white/10 after:absolute after:top-0 after:right-0">
+              <div className="relative text-center flex-1 after:w-[1px] after:h-full after:bg-white/10 after:absolute after:top-0 after:right-0">
                 <div className="text-2xl xl:text-4xl font-extrabold text-accent mb-2">
-                  <CountUp start={0} end={650} duration={5} />
+                  <CountUp start={0} end={87} duration={5} />
                 </div>
-                <div className="text-xs uppercase tracking-[1px] leading-[1.4] max-w-[100px]">
-                  Finished projects.
+                <div className="text-center text-xs uppercase tracking-[1px] leading-[1.4]">
+                  の想いを <br />
+                  形にしてきた日々
                 </div>
               </div>
 
               {/* awards */}
-              <div className="relative flex-1">
+              <div className="relative text-center flex-1 after:w-[1px] after:h-full after:bg-white/10 after:absolute after:top-0 after:right-0">
                 <div className="text-2xl xl:text-4xl font-extrabold text-accent mb-2">
-                  <CountUp start={0} end={8} duration={5} />
+                  <CountUp start={0} end={1} duration={5} />
                 </div>
-                <div className="text-xs uppercase tracking-[1px] leading-[1.4] max-w-[100px]">
-                  Winning awards.
+                <div className="text-center text-xs uppercase tracking-[1px] leading-[1.4]">
+                  1つの小さな誇り <br />
+                  （受賞歴）
                 </div>
               </div>
             </div>
@@ -191,16 +236,15 @@ const About = () => {
           initial="hidden"
           animate="show"
           exit="hidden"
-          className="flex flex-col w-full xl:max-w-[48%] h-[480px]"
+          className="flex flex-col w-full xl:max-w-[44%] h-[480px]"
         >
           <div className="flex gap-x-4 xl:gap-x-8 mx-auto xl:mx-0 mb-4">
             {aboutData.map((item, itemI) => (
               <div
                 key={itemI}
-                className={`${
-                  index === itemI &&
+                className={`${index === itemI &&
                   "text-accent after:w-[100%] after:bg-accent after:transition-all after:duration-300"
-                } cursor-pointer capitalize xl:text-lg relative after:w-8 after:h-[2px] after:bg-white after:absolute after:-bottom-1 after:left-0`}
+                  } cursor-pointer capitalize xl:text-lg relative after:w-8 after:h-[2px] after:bg-white after:absolute after:-bottom-1 after:left-0`}
                 onClick={() => setIndex(itemI)}
               >
                 {item.title}
