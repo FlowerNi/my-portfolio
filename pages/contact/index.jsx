@@ -32,7 +32,7 @@ const Contact = () => {
           >
             {/* スパム対策 & リダイレクト */}
             <input type="hidden" name="_captcha" value="false" />
-            <input type="hidden" name="_next" value="https://warm-fire-engineer-portfolio.com/thanks" />
+            <input type="hidden" name="_next" value="https://my-portfolio-aq3z.vercel.app/thanks"/>
 
             {/* 入力項目 */}
             <div className="flex gap-x-6 w-full">
